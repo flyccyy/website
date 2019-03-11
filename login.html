@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .pic {
+            width: 70%;
+            height: 1000px;
+            font-family: "微软雅黑";
+            background: url("images/login.jpg") no-repeat;
+            background-size: 100% 1000px;
+            margin: 0 auto;
+        }
+
+        .login {
+            position: absolute;
+            top: 70%;
+            left: 50%;
+            width: 350px;
+            height: 200px;
+            margin: -150px 0 0 -150px;
+            /*background-color: #ff0;*/
+
+        }
+        /*.box1{*/
+            /*width: 150px;*/
+            /*height: 14px;*/
+            /*line-height:14px;*/
+            /*background-color: #f00;*/
+        /*}*/
+
+        input[type="text"],input[type="password"]{
+            padding: 10px;
+            width: 200px;
+            /*width: 100%;*/
+            color: #222;
+            margin-bottom: 30px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            letter-spacing: 2px;
+        }
+
+        form label{
+            color:#fff;
+        }
+        /*form button {*/
+            /*width: 100%;*/
+            /*padding: 10px;*/
+            /*background-color: #3EADC5;*/
+            /*border: 1px solid #000;*/
+            /*border-radius: 4px;*/
+            /*cursor: pointer;*/
+        /*}*/
+        form input[type="checkbox"]{
+            /*background-color: #ff0;*/
+            height: 14px;
+            line-height: 14px;
+            vertical-align: middle;
+        }
+        form span{
+            margin-left:60px;
+            color:#fff;
+        }
+        form span a{
+            color:#fff;
+        }
+        form button{
+            width: 150px;
+            height: 40px;
+            margin-top: 110px;
+            text-align: center;
+            font-size:26px;
+            font-weight:700;
+            background:none;
+            color:#929421;
+            border:none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+<div class="pic">
+    <div class="login">
+        <!--<h1>login</h1>-->
+        <form action="" method="post">
+
+            <label>
+                用户名：<input type="text" name="user" class="tt" required>
+                <!--<span class="box1"></span>-->
+            </label><br>
+            <label>
+                密&nbsp;&nbsp;&nbsp;码: &nbsp;&nbsp;<input type="password" name="password" required>
+            </label><br>
+            <label>
+                <input type="checkbox" >记住用户名一周
+            </label>
+            <span><a href="#">忘记密码?</a></span><br>
+            <button type="submit" ><a href="index.html">登 录</a></button>
+        </form>
+    </div>
+</div>
+<script src="jquery-3.3.1.js"></script>
+<script>
+    $(document).ready(function () {
+        $(".tt").blur(function () {
+            if($(".tt").val()==""){
+                $(".box1").text("用户名不能为空");
+            }
+        })
+    })
+</script>
+</body>
+</html>

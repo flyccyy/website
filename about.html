@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>关于</title>
+    <style>
+        body,ul,li,img,input,h1,h2,h3,h4,h5,h6,p,div{
+            margin: 0;
+            padding: 0;
+            font-family:微软雅黑;
+        }
+        ul,li{
+            list-style: none;
+        }
+        a{
+            text-decoration: none;
+        }
+        input,img{
+            border:0 none;
+        }
+        input{
+            outline-style:none;
+        }
+        .fl{
+            float:left;
+        }
+        .fr{
+            float:right;
+        }
+        .pic{
+            width: 70%;
+            height: 850px;
+            background-color: #e7c5e5;
+            margin:0 auto;
+            padding-top:50px;
+        }
+
+
+
+        .title{
+            height: 50px;
+            margin-right: 230px;
+
+        }
+        .title ul li{
+            float:left;
+            /*padding:0 20px;*/
+            line-height: 50px;
+        }
+        .title ul li a{
+            display:inline-block;
+            padding:0 20px;
+            font-size:18px;
+            font-weight:700;
+            color:#222;
+        }
+        .title ul li a:hover{
+            color:dodgerblue;
+            border-bottom:5px solid dodgerblue;
+        }
+        .toggle{
+            width: 100%;
+            height: 850px;
+            /*background-color: #ccc;*/
+            /*margin-left:50px;*/
+        }
+        .toggle .tab{
+            width: 90%;
+            height: 50px;
+            /*background-color: firebrick;*/
+            padding-left:5%;
+            padding-right:5%;
+        }
+
+        .toggle .tab ul li{
+            float:left;
+            width: 30%;
+            height: 50px;
+            line-height:50px;
+            text-align: center;
+            color:#fff;
+            font-weight:700;
+            font-family:仿宋;
+            font-size:18px;
+            /*padding:10px 40px 0 50px;*/
+            cursor:pointer;
+            background-color: orange;
+            margin-right:10px;
+        }
+
+        .toggle .main{
+            height: 800px;
+            width: 100%;
+            /*background-color: #ff0000;*/
+        }
+        .toggle .main .main-c .bg{
+            width: 80%;
+            height: 650px;
+            margin:0 auto;
+            background: url("images/个人信息.jpg") no-repeat;
+            background-size:100% 800px;
+            /*background-color: #ff0;*/
+            padding-top:200px;
+            padding-left:10%;
+            padding-right:10%;
+        }
+        .cen{
+            width: 800px;
+            height: 450px;
+            /*background-color:aqua;*/
+        }
+        .cen-l{
+            width: 300px;
+            height: 450px;
+            /*background-color: lawngreen;*/
+            text-align: center;
+        }
+        .cen-r{
+            width: 450px;
+            height: 450px;
+            font-size:20px;
+            font-family:仿宋;
+            margin-left:30px;
+            margin-top:50px;
+            /*font-weight:700;*/
+            color:#777777;
+            /*background-color: fuchsia;*/
+        }
+        .cen-r-left{
+            width: 200px;
+            height: 450px;
+        }
+        .cen-r p{
+            height: 30px;
+            padding-left:20px;
+            background: url("images/gou.jpg") no-repeat;
+        }
+        .bottom{
+            height: 50px;
+            width: 100%;
+            margin-top:50px;
+            margin-left:20px;
+            line-height: 50px;
+            text-align: center;
+        }
+        .bottom .left,.bottom .center,.bottom .right{
+            width: 250px;
+            height: 50px;
+            margin-right:20px;
+            background-color:orange;
+        }
+        .bottom .left{
+            width: 280px;
+            height: 50px;
+        }
+        .pho img{
+            width: 200px;
+            height: 200px;
+            border-radius:50%;
+        }
+        .introduce{
+            margin-top:30px;
+            padding-left:10px;
+            padding-right:10px;
+        }
+
+        .toggle .main .main-c .bg2{
+            width: 100%;
+            height: 650px;
+            margin:0 auto;
+            background: url("images/知识技能.jpg") no-repeat;
+            background-size:100% 800px;
+            /*background-color: #ff0;*/
+            padding-top:200px;
+            /*padding-left:10%;*/
+            /*padding-right:10%;*/
+            font-family:微软雅黑;
+            font-size:20px;
+            color:#666666;
+        }
+        .toggle .main .main-c .bg3{
+            width: 100%;
+            height: 650px;
+            margin:0 auto;
+            background: url("images/所得荣誉.jpg") no-repeat;
+            background-size:100% 800px;
+            /*background-color: #ff0;*/
+            padding-top:200px;
+            /*padding-left:10%;*/
+            /*padding-right:10%;*/
+            font-family:微软雅黑;
+            font-size:24px;
+            color: darkred;
+        }
+        .toggle .main .main-c{
+            width: 100%;
+            float:left;
+            display:none;
+            /*background: url("images/个人信息.jpg") no-repeat;*/
+            /*font-size:24px;*/
+            /*font-family:仿宋;*/
+            /*font-weight:500;*/
+            /*color: #2a1831;*/
+        }
+        .toggle .tab li.active{
+            color:rebeccapurple;
+            /*border-bottom:4px solid aquamarine;*/
+        }
+        .toggle .main .main-c.selected{
+            display:block;
+        }
+
+        .bg2 .one,.bg2 .two,.bg2 .three,.bg2 .four,.bg2 .five,.bg2 .six{
+            width: 200px;
+            height: 30px;
+            position: absolute;
+            left:467px;
+            top:329px;
+        }
+        .bg2 .two{
+            left:400px;
+            top:442px;
+        }
+        .bg2 .three{
+            left:484px;
+            top:555px;
+        }
+        .bg2 .four{
+            left:902px;
+            top:329px;
+        }
+        .bg2 .five{
+            left:973px;
+            top:442px;
+        }
+        .bg2 .six{
+            left:902px;
+            top:555px;
+        }
+
+
+        .bg3 .first{
+            position: absolute;
+            top:428px;
+            left:560px;
+        }
+        .bg3 .second{
+            position: absolute;
+            top:428px;
+            left:820px;
+        }
+        .bg3 .third{
+            position: absolute;
+            top:732px;
+            left:580px;
+        }
+        .bg3 .forth{
+            position: absolute;
+            top:732px;
+            left:798px;
+        }
+    </style>
+    <!--<link rel="stylesheet" href="about.css">-->
+    <script src="jquery-3.3.1.js"></script>
+</head>
+<body>
+<div class="title fr">
+    <ul>
+        <li><a href="index.html">首页</a></li>
+        <li><a href="about.html">关于</a></li>
+        <li><a href="diary.html">美文欣赏</a></li>
+        <li><a href="photos.html">相册</a></li>
+        <li><a href="board.html">留言板</a></li>
+    </ul>
+</div>
+<div class="pic">
+    <div class="toggle">
+        <div class="tab">
+            <ul>
+                <li class="tab-item active">个人信息</li>
+                <li class="tab-item">知识技能</li>
+                <li class="tab-item">所得荣誉</li>
+            </ul>
+        </div>
+        <div class="main">
+            <div class="main-c selected">
+                <div class="bg">
+                   <div class="cen">
+                       <div class="cen-l fl">
+                           <div class="pho">
+                               <img src="images/photo.jpg" alt="">
+                           </div>
+                           <div class="introduce">
+                               2019年6月毕业于肇庆学院，就读于信息与计算科学专业，目前正在从事前端开发实习工作。
+                           </div>
+                       </div>
+                       <div class="cen-r fr">
+                           <div class="cen-r-left fl">
+                               <p>姓名：冯丽莹</p>
+                               <p>年龄：23岁</p>
+                               <p>籍贯：广东清远</p>
+                               <p>毕业学校：肇庆学院</p>
+                               <p>擅长：英语写作</p>
+                           </div>
+                           <div class="cen-r-right fr">
+                               <p>性别：女</p>
+                               <p>民族：汉族</p>
+                               <p>学历：本科</p>
+                               <p>专业：信息与计算科学</p>
+                               <p>政治面貌：中共党员</p>
+                           </div>
+                       </div>
+                   </div>
+                    <div class="bottom">
+                        <div class="left fl">电子邮箱：13413538434@163.com</div>
+                        <div class="center fl">家庭住址：广东省清远市</div>
+                        <div class="right fl">
+                            联系方式：13413538434
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="main-c">
+                <div class="bg2">
+                    <div class="one ">Adobe Illustrator</div>
+                    <div class="two ">Adobe PhotoShop</div>
+                    <div class="three ">全国计算机三级</div>
+                    <div class="four">
+                        英语六级
+                    </div>
+                    <div class="five">前端知识</div>
+                    <div class="six">数据库</div>
+                </div>
+
+            </div>
+            <div class="main-c">
+                <div class="bg3">
+                    <div class="first">优秀共青团员</div>
+                    <div class="second">优秀学生干部</div>
+                    <div class="third">三好学生</div>
+                    <div class="forth">“外研社杯”全国<br>英语写作大赛初赛二等奖</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    $(function () {
+        $(".tab-item").mouseenter(function () {
+            $(this).addClass("active").siblings().removeClass("active");
+            var index = $(this).index();
+            $(".main-c").eq(index).addClass("selected").siblings().removeClass("selected");
+        });
+    });
+</script>
+</body>
+</html>
